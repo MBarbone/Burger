@@ -9,10 +9,10 @@ var PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -26,5 +26,5 @@ var routes = require("./controllers/burger_controllers.js");
 app.use(routes);
 
 app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
+    console.log(`App listening on http://localhost:${PORT}/`);
 });

@@ -3,16 +3,16 @@ var express = require('express');
 var router = express.Router();
 
 // import burger models
-var burger = require('../models/burger');
+var burger = require('../models/burger.js');
 
 // define homepage
 router.get('/', function(req, res){
     burger.selectAll(function(data){
-        var hbsBurger = {
+        var hbsObject = {
             burgers: data
         };
-        console.log(hbsBurger);
-        res.sender('index', hbsBurger);
+        console.log(hbsObject);
+        res.render('index', hbsObject);
     });
 });
 
