@@ -5,7 +5,7 @@ $(function() {
         event.preventDefault();
 
         var newBurger = {
-            name: $("#newburger").val().trim(),
+            burger_name: $("#newburger").val().trim(),
             devoured: 0
         };
 
@@ -50,4 +50,4 @@ $(function() {
         }).then(location.reload());
     });
 
-});
+})
